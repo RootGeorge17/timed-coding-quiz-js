@@ -6,7 +6,7 @@ function startQuiz() {
 
   document.querySelector('#questions').classList.remove('hide');
   document.querySelector('#questions').classList.add('start');
-  displayQuestion(1);
+  displayQuestion(0);
 }
 
 function submitAnswer() {
