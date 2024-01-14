@@ -6,7 +6,7 @@ The application
 
 ## Usage
 
-#### Access the website on: https://rootgeorge17.github.io/timed-coding-quiz-js/
+#### Access the application on: https://rootgeorge17.github.io/timed-coding-quiz-js/
 #### The following gif shows the web application's appearance and functionality:
 
 ![](assets/08-web-apis-challenge-demo.gif)
