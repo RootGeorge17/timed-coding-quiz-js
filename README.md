@@ -1,4 +1,4 @@
-# Dynamic Time Coding Quiz
+# Dynamic Timed Coding Quiz
 
 ## Description
 
