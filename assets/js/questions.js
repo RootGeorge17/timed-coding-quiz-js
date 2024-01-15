@@ -29,8 +29,7 @@ var quizData = [
 
 
 function displayQuestion(questionNo) {
-  var questionElement = document.querySelector('#question-title');
-  questionElement.textContent = quizData[questionNo].question;
+  document.querySelector('#question-title').textContent = quizData[questionNo].question;
 
   var choicesElement = document.querySelector('#choices');
   var choices = quizData[questionNo].choices;
@@ -43,5 +42,5 @@ function displayQuestion(questionNo) {
 }
 
 function changeCurrentQuestion(currentQuestion) {
-  displayQuestion(questionNo + 1);
+  displayQuestion(currentQuestion);
 }
