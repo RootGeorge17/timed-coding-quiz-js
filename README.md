@@ -2,7 +2,7 @@
 
 ## Description
 
-The application 
+Timed JavaScript quiz app featuring timed questions, penalties for incorrect answers, and score storage.
 
 ## Usage
 
