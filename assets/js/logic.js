@@ -27,15 +27,13 @@ function startQuiz() {
 
 // Function to handle submitting an answer
 function submitAnswer(event) {
-  feedback.classList.remove("hide"); // Show feedback
-
   // Check if the selected answer is incorrect and apply a penalty
   if (event.target.id !== quizData[currentQuestion].correctAnswer) {
     timeVal = timeVal - 10; // Penalty for getting the answer wrong
     timer.textContent = timeVal; // Updating the timer element after penalty
-    feedback.textContent = "Incorrect Answer";
+    showFeedback("Incorrect Answer");
   } else {
-    feedback.textContent = "Correct Answer";
+    showFeedback("Correct Answer");
   }
 
   // Move to the next question if there are more questions
@@ -76,6 +74,15 @@ function startTimer() {
       endQuiz();
     }
   }, 1000); // Timer updates every 1000 milliseconds (1 second)
+}
+
+function showFeedback(feedbackVal) {
+  feedback.classList.remove("hide"); // Show feedback
+  feedback.textContent = feedbackVal;
+
+  setTimeout(function () {
+    feedback.classList.add("hide"); // Hide feedback
+  }, 1800);
 }
 
 // Event listener for starting the quiz button
