@@ -3,6 +3,7 @@ var startButton = document.querySelector('#start');
 var answerButtons = document.querySelector('#choices');
 var feedback = document.querySelector('#feedback');
 var timer = document.querySelector('#time');
+var submitScore = document.querySelector('#submit');
 
 // Variables to keep track of quiz state and time
 var currentQuestion = 0;
@@ -91,6 +92,11 @@ function showFeedback(feedbackVal) {
 
 // Event listener for starting the quiz button
 startButton.addEventListener('click', startQuiz);
+
+// Event listener submitting initials and score
+submitScore.addEventListener('submit', function () {
+  addScore("GS", timeVal);
+});
 
 // Event listener for submitting answers
 answerButtons.addEventListener('click', function (event) {
