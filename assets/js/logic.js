@@ -1,6 +1,7 @@
 // Selecting DOM elements using IDs
 var startButton = document.querySelector('#start');
 var answerButtons = document.querySelector('#choices');
+var feedback = document.querySelector('#feedback');
 var timer = document.querySelector('#time');
 
 // Variables to keep track of quiz state and time
@@ -26,10 +27,15 @@ function startQuiz() {
 
 // Function to handle submitting an answer
 function submitAnswer(event) {
+  feedback.classList.remove("hide"); // Show feedback
+
   // Check if the selected answer is incorrect and apply a penalty
   if (event.target.id !== quizData[currentQuestion].correctAnswer) {
     timeVal = timeVal - 10; // Penalty for getting the answer wrong
     timer.textContent = timeVal; // Updating the timer element after penalty
+    feedback.textContent = "Incorrect Answer";
+  } else {
+    feedback.textContent = "Correct Answer";
   }
 
   // Move to the next question if there are more questions
