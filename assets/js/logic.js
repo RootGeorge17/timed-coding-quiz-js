@@ -8,9 +8,9 @@ function startQuiz() {
   document.querySelector('#start-screen').classList.remove('start');
   document.querySelector('#start-screen').classList.add('hide');
 
+  startTimer();
   document.querySelector('#questions').classList.remove('hide');
   document.querySelector('#questions').classList.add('start');
-  startTimer();
   displayQuestion(currentQuestion);
 }
 
@@ -38,6 +38,7 @@ function endQuiz() {
 }
 
 function startTimer() {
+  timer.textContent = timeVal;
   var timerCountdown = setInterval(function () {
     timeVal--;
     timer.textContent = timeVal;
