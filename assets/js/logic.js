@@ -8,6 +8,7 @@ var timer = document.querySelector('#time');
 var currentQuestion = 0;
 var timeVal = 75;
 var timerCountdown;
+var feedbackTimeout;
 
 // Function to start the quiz
 function startQuiz() {
@@ -80,7 +81,10 @@ function showFeedback(feedbackVal) {
   feedback.classList.remove("hide"); // Show feedback
   feedback.textContent = feedbackVal;
 
-  setTimeout(function () {
+  // Clear existing timeout (if any)
+  clearTimeout(feedbackTimeout);
+
+  feedbackTimeout = setTimeout(function () {
     feedback.classList.add("hide"); // Hide feedback
   }, 1800);
 }
