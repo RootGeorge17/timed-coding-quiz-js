@@ -29,14 +29,21 @@ var quizData = [
 
 
 function displayQuestion(questionNo) {
-  document.querySelector('#question-title').textContent = quizData[questionNo].question;
-
+  var questionTitleElement = document.querySelector('#question-title');
   var choicesElement = document.querySelector('#choices');
+
+  // Clear existing question and choices
+  questionTitleElement.textContent = '';
+  choicesElement.innerHTML = '';
+
+  // Populate with new question and choices
+  questionTitleElement.textContent = quizData[questionNo].question;
   var choices = quizData[questionNo].choices;
 
   for (var i = 0; i < choices.length; i++) {
     var choiceElement = document.createElement('button');
-    choiceElement.textContent = choices[i];
+    choiceElement.setAttribute('id', `answer`)
+    choiceElement.textContent = i + 1 + ". " + choices[i];
     choicesElement.appendChild(choiceElement);
   }
 }

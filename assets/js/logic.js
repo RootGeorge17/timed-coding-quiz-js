@@ -1,4 +1,5 @@
 var startButton = document.querySelector('#start');
+var answerButtons = document.querySelector('#choices');
 var currentQuestion = 0;
 
 function startQuiz() {
@@ -10,7 +11,8 @@ function startQuiz() {
   displayQuestion(currentQuestion);
 }
 
-function submitAnswer(answer) {
+function submitAnswer(event) {
+  console.log("Answered " + event);
   currentQuestion++;
   changeCurrentQuestion(currentQuestion);
 }
@@ -20,3 +22,9 @@ function endQuiz() {
 }
 
 startButton.addEventListener('click', startQuiz);
+
+answerButtons.addEventListener('click', function (event) {
+  if (event.target.tagName === 'BUTTON') {
+    submitAnswer(event);
+  }
+});
