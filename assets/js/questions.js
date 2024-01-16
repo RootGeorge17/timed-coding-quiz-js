@@ -42,7 +42,7 @@ function displayQuestion(questionNo) {
 
   for (var i = 0; i < choices.length; i++) {
     var choiceElement = document.createElement('button');
-    choiceElement.setAttribute('id', `answer`)
+    choiceElement.setAttribute('id', choices[i])
     choiceElement.textContent = i + 1 + ". " + choices[i];
     choicesElement.appendChild(choiceElement);
   }

@@ -12,13 +12,25 @@ function startQuiz() {
 }
 
 function submitAnswer(event) {
-  console.log("Answered " + event);
-  currentQuestion++;
-  changeCurrentQuestion(currentQuestion);
+
+  if (event.target.id === quizData[currentQuestion].correctAnswer) {
+    console.log("Corrent Answer")
+  }
+  else {
+    console.log("Wrong Answer")
+  }
+  if (currentQuestion < 4) {
+    currentQuestion++;
+    changeCurrentQuestion(currentQuestion);
+  }
+  else {
+    endQuiz();
+  }
+
 }
 
 function endQuiz() {
-
+  console.log("End Quiz");
 }
 
 startButton.addEventListener('click', startQuiz);
