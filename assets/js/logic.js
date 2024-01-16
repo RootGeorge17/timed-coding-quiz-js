@@ -2,7 +2,7 @@ var startButton = document.querySelector('#start');
 var answerButtons = document.querySelector('#choices');
 var timer = document.querySelector('#time');
 var currentQuestion = 0;
-var timeVal = 10;
+var timeVal = 75;
 
 function startQuiz() {
   document.querySelector('#start-screen').classList.remove('start');
@@ -16,9 +16,8 @@ function startQuiz() {
 
 function submitAnswer(event) {
   if (event.target.id === quizData[currentQuestion].correctAnswer) {
-    console.log("Corrent Answer")
   } else {
-    console.log("Wrong Answer")
+    timeVal = timeVal - 10;
   }
 
   if (currentQuestion < 4) {
