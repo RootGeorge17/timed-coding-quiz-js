@@ -1,4 +1,4 @@
-// associative array of questions - answers
+// Array of objects with properties question, choices and correct answer
 var quizData = [
   {
     question: 'Commonly used data types DO Not Include:',
@@ -27,8 +27,9 @@ var quizData = [
   },
 ];
 
-
+// Function to display a question and choices
 function displayQuestion(questionNo) {
+  // Selecting question title and choices containers
   var questionTitleElement = document.querySelector('#question-title');
   var choicesElement = document.querySelector('#choices');
 
@@ -40,6 +41,7 @@ function displayQuestion(questionNo) {
   questionTitleElement.textContent = quizData[questionNo].question;
   var choices = quizData[questionNo].choices;
 
+  // Create buttons for each choice
   for (var i = 0; i < choices.length; i++) {
     var choiceElement = document.createElement('button');
     choiceElement.setAttribute('id', choices[i])
@@ -48,6 +50,7 @@ function displayQuestion(questionNo) {
   }
 }
 
+// Function to change the current question
 function changeCurrentQuestion(currentQuestion) {
   displayQuestion(currentQuestion);
 }
