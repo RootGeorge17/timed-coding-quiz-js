@@ -31,6 +31,11 @@ function submitAnswer(event) {
 
 function endQuiz() {
   console.log("End Quiz");
+  document.querySelector('#questions').classList.remove('start');
+  document.querySelector('#questions').classList.add('hide');
+
+  document.querySelector('#end-screen').classList.remove('hide');
+  document.querySelector('#end-screen').classList.add('start');
 }
 
 startButton.addEventListener('click', startQuiz);
