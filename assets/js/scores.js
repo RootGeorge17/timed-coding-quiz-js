@@ -23,6 +23,7 @@ function showScores() {
 
 function clearHighscores() {
   localStorage.clear();
+  showScores();
 }
 
 clearScores.addEventListener('click', clearHighscores);
