@@ -94,8 +94,9 @@ function showFeedback(feedbackVal) {
 startButton.addEventListener('click', startQuiz);
 
 // Event listener submitting initials and score
-submitScore.addEventListener('submit', function () {
-  addScore("GS", timeVal);
+submitScore.addEventListener('click', function (event) {
+  var initials = document.getElementById('initials').value;
+  localStorage.setItem(initials, timeVal);
 });
 
 // Event listener for submitting answers

@@ -5,6 +5,10 @@ var clearScores = document.querySelector('#clear');
 function showScores() {
   highscoresElement.innerHTML = '';
 
+  var scores = Object.keys(localStorage).map(function (initials) {
+    return { initials: initials, score: localStorage.getItem(initials) };
+  });
+
   if (scores.length > 0) {
     scores.forEach(function (entry) {
       var scoreElement = document.createElement('li');
@@ -17,14 +21,8 @@ function showScores() {
   }
 }
 
-function addScore(initials, score) {
-  scores.push({ initials: initials, score: score });
-  showScores();
-}
-
 function clearHighscores() {
-  scores = [];
-  showScores();
+  localStorage.clear();
 }
 
 clearScores.addEventListener('click', clearHighscores);
